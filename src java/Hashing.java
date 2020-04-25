@@ -11,7 +11,9 @@
 https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html
 **********************************************************/
 import java.util.HashMap;
-public class Hashing<K, V> implements TranslatorInterface<K,V>{
+import java.lang.*;
+
+public class Hashing<K extends Comparable<K>, V> implements TranslatorInterface<K,V>{
 	protected HashMap<K, V> data  = new HashMap<K, V>(); // datos agregados
 
 	public V remove(K key){
@@ -19,13 +21,24 @@ public class Hashing<K, V> implements TranslatorInterface<K,V>{
 	}
 
 
-	public V put(K key, V value){
-		return data.put(key, value);
+	public V put(Association association){
+		return data.put((K)association.getKey(), (V)association.getValue());
 	}
 
 
 	public int size(){
 		return data.size();
+	}
+
+	public V get(Object key){
+		return data.get(key);
+	}
+
+	public boolean searchValue(String searched){
+		if (data.containsKey(searched)) {
+			return true;
+		}
+		return false;
 	}
 
 }

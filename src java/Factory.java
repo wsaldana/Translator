@@ -17,7 +17,7 @@ public class Factory{
 		if (tipoTranslator == 1) { //Es un hash map
 			return new Hashing();
 		} else { //Es un splay tree
-			return new ();
+			return new Hashing();
 		}
 	}
 }

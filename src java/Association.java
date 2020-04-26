@@ -5,13 +5,12 @@
 *Clase encargada de los atributos de una asociacion
 *
 *@author Andrea Amaya #19357
-*@author Walter Saldana #19
+*@author Walter Saldana #19897
 
 *Codigo adaptado de: Java Structures: Data Structures pagina 16 y pagina 257
 **********************************************************/
-import java.lang.*;
 
-public class Association<K extends Comparable<K>, V> {
+public class Association<K extends Comparable<K>, V> implements Comparable<Association<K,V>>{
     private K key;
     private V value;
 
@@ -24,6 +23,8 @@ public class Association<K extends Comparable<K>, V> {
         this.key = key;
         this.value = value;
     }
+
+    public Association(){}
 
     /**
     Pre: Asocacion a obtener la llave
@@ -39,6 +40,14 @@ public class Association<K extends Comparable<K>, V> {
     */
     public V getValue() {
         return this.value;
+    }
+
+    public void setKey(K key){
+        this.key = key;
+    }
+
+    public void setValue(V value){
+        this.value = value;
     }
 
     /**

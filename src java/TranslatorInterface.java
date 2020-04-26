@@ -5,9 +5,8 @@
 *Clase encargada de los metodos en comun entre un map y un tree
 *
 *@author Andrea Amaya #19357
-*@author Walter saldana #19
+*@author Walter saldana #19897
 **********************************************************/
-import java.lang.*;
 
 public interface TranslatorInterface<K extends Comparable<K>,V>{
 	//Pre: El queue no esta vacio
@@ -18,7 +17,7 @@ public interface TranslatorInterface<K extends Comparable<K>,V>{
 	@param E 	Valor a agregar
 	Post: Se agrega un valor al queue
 	*/
-	public V put(Association association);
+	public V put(Association<K,V> association);
 
 
 	//Post: Se retorna la cantidad de elementos dentro del queue
@@ -26,9 +25,9 @@ public interface TranslatorInterface<K extends Comparable<K>,V>{
 
 	//Pre: Se busca una palabra
 	//Post: Se retorna su traduccion
-	public boolean searchValue(String searched);
+	public boolean searchValue(K searched);
 
 	//Pre: Se busca una palabra
 	//Post: Se retorna su traduccion
-	public V get(Object key);
+	public V get(K key);
 }
